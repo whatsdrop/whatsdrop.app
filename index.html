@@ -13,6 +13,22 @@
       padding: 0;
     }
 
+    .mt-2 {
+      margin-top: 2rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 2rem;
+    }
+
+    .mt-3 {
+      margin-top: 3rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 3rem;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f8fafc;
@@ -57,7 +73,7 @@
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 750px;
       margin: 1rem auto;
       color: #4b5563;
     }
@@ -79,7 +95,7 @@
 
     .benefits h2,
     .features h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
@@ -203,6 +219,16 @@
       background: #019875;
     }
 
+    .gradient-text {
+      background: linear-gradient(to right, #10b981, #6366f1); /* Azul a violeta como en tu diseño */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      font-weight: 700;
+    }
+
+
+
     @media (min-width: 640px) {
       .cta-form {
         flex-direction: row;
@@ -224,7 +250,7 @@
     /* Responsive */
     @media (min-width: 768px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 5rem;
       }
 
       .card-group {
@@ -245,20 +271,21 @@
     <div class="logo">WhatsDrop</div>
   </header>
 
-  <section class="hero">
-    <h1>Transforma tu <span>WhatsApp</span> en una máquina de ventas</h1>
+  <section class="hero mt-3 mb-3">
+    <h1>Transforma tu <span class="gradient-text">WhatsApp</span> en una máquina de ventas</h1>
+
     <p>
       IA conversacional entrenada con tu estilo personal que actúa como asesor de ventas 24/7,
       ofreciendo recomendaciones personalizadas y cerrando ventas automáticamente.
     </p>
     <section class="cta">
-      <form  class="cta-form form-inline" action="https://formsubmit.co/info@whatsdrop.ai" method="POST">
+      <form class="cta-form form-inline" action="https://formsubmit.co/info@whatsdrop.ai" method="POST">
         <input type="email" name="email" placeholder="Tu email" required />
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_next" value="https://www.whatsdrop.ai/">
         <button class="btn-green" type="submit">Únete a la Lista de Espera →</button>
-   </form>
+      </form>
       <p style="font-size: 0.85rem; color: #6b7280;">Acceso anticipado · Sin compromiso</p>
     </section>
   </section>
@@ -275,7 +302,8 @@
           </svg>
         </div>
         <h2>Asesor Personal con tu Estilo</h2>
-        <p>Un asistente conversacional que actúa como tu personal shopper virtual, entrenado con tu lenguaje, estilo y criterio de recomendación. Guía a tus clientes con sugerencias empáticas y personalizadas.</p>
+        <p>Un asistente conversacional que actúa como tu personal shopper virtual, entrenado con tu lenguaje, estilo y
+          criterio de recomendación. Guía a tus clientes con sugerencias empáticas y personalizadas.</p>
         <ul>
           <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
@@ -295,7 +323,8 @@
           </svg>
         </div>
         <h2>Selección Curada Instantánea</h2>
-        <p>Experiencia conversacional guiada que actúa como filtro inteligente, presentando una selección reducida y altamente relevante basada en 2-3 preguntas clave sobre necesidades del cliente.</p>
+        <p>Experiencia conversacional guiada que actúa como filtro inteligente, presentando una selección reducida y
+          altamente relevante basada en 2-3 preguntas clave sobre necesidades del cliente.</p>
         <ul>
           <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
@@ -315,7 +344,8 @@
           </svg>
         </div>
         <h2>Maniquí Visual del Outfit</h2>
-        <p>Representación visual clara v atractiva de outfit sugerido usando DALL-E 3, mostrando cómo se vería el conjunto completo en una persona real</p>
+        <p>Representación visual clara v atractiva de outfit sugerido usando DALL-E 3, mostrando cómo se vería el
+          conjunto completo en una persona real</p>
         <ul>
           <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
@@ -339,7 +369,7 @@
         <svg class="icon" fill="#06b6d4" viewBox="0 0 24 24">
           <path d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
-        <h3>+300% Conversión</h3>
+        <h2>+300% Conversión</h2>
         <p>Aumenta dramáticamente tu tasa de conversión con recomendaciones personalizadas y atención 24/7</p>
       </div>
       <div class="card benefit-icon">
@@ -347,7 +377,7 @@
           <circle cx="12" cy="12" r="10" />
           <path d="M12 8v4l2 2" />
         </svg>
-        <h3>Atención Instantánea</h3>
+        <h2>Atención Instantánea</h2>
         <p>Responde a tus clientes al instante, sin importar la hora del día, manteniendo tu estilo personal</p>
       </div>
       <div class="card benefit-icon">
@@ -355,7 +385,7 @@
           <path d="M4 4h16v16H4z" />
           <path d="M4 9h16M9 4v16" />
         </svg>
-        <h3>Escalabilidad Total</h3>
+        <h2>Escalabilidad Total</h2>
         <p>Atiende a miles de clientes simultáneamente sin perder la personalización que te caracteriza</p>
       </div>
     </div>
