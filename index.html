@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revoluciona la compra online</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsDrop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #ec4899;
-      --secondary: #8b5cf6;
-      --gradient: linear-gradient(90deg, #d946ef, #ec4899, #f43f5e);
-      --bg: #fff;
-      --text: #1a1a1a;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,153 +14,358 @@
     }
 
     body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #111827;
+      line-height: 1.6;
     }
 
-    /* Navbar */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
       display: flex;
       justify-content: space-between;
+      padding: 1.5rem 2rem;
       align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      z-index: 999;
     }
 
-    .logo {
+    header .logo {
       font-weight: 700;
-      font-size: 4rem;
-      color: var(--primary);
-      font-family: sans-serif;
-      font-weight: bold;
-      margin-top: 50px;
+      font-size: 1.2rem;
+      color: #111;
     }
 
-    nav a {
-      margin: 0 1rem;
+    .btn-green {
+      background-color: #10b981;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
       text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .btn-login, .btn-signup {
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
       font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
     }
 
-    .btn-login {
-      background: white;
-      border: 1px solid #ccc;
-      margin-right: 0.5rem;
-    }
-
-    .btn-login:hover {
-      border-color: var(--primary);
-    }
-
-    .btn-signup {
-      background: var(--gradient);
-      color: white;
-    }
-
-    .btn-signup:hover {
-      opacity: 0.9;
-    }
-
-    /* Hero */
     .hero {
-      background: rgb(35, 35, 35);
-      color: white;
-      padding: 8rem 2rem 6rem;
       text-align: center;
-      /* margin-top: 70px; */
-      /* min-height: calc(100vh - 70px); */
-      min-height: calc(100vh);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 3rem 1.5rem;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: white;   
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #3b82f6;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      color: #4b5563;
     }
 
-    .form-inline {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
+    .hero .cta {
+      margin-top: 1.5rem;
     }
 
-    input[type="email"] {
-      padding: 0.9rem 1.2rem;
-      border-radius: 999px;
-      border: none;
-      outline: none;
-      flex: 1;
-      min-width: 220px;
-      font-size: 16px;
+    .cta .btn-green {
+      display: inline-block;
+      margin-bottom: 0.5rem;
     }
 
-    button.cta {
-      background: var(--gradient);
-      /* color: var(--primary); */
-      color: white;
+    .benefits,
+    .features {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .benefits h2,
+    .features h2 {
+      font-size: 1.5rem;
       font-weight: 700;
-      padding: 0.9rem 1.5rem;
-      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefits p,
+    .features p {
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .card-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      margin-top: 0.5rem;
+      padding-left: 0;
+      list-style: none;
+      color: #374151;
+    }
+
+    .card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: #10b981;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-icon {
+      text-align: center;
+    }
+
+    .cta-banner {
+      background: linear-gradient(to right, #0ea5e9, #3b82f6);
+      color: white;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta-banner h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-banner p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner .btn {
+      background-color: white;
+      color: #0ea5e9;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .cta-form input[type="email"] {
+      padding: 12px 16px;
       border: none;
+      border-radius: 8px;
+      max-width: 300px;
+      width: 100%;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .cta-form button {
+      background: #00b894;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
       transition: background 0.3s;
-      font-size: 16px;
     }
 
-    .top-header {
-      background: rgb(35, 35, 35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .cta-form button:hover {
+      background: #019875;
     }
 
-    @media (max-width: 600px) {
+    @media (min-width: 640px) {
+      .cta-form {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .cta-form input[type="email"] {
+        border-radius: 8px 0 0 8px;
+        margin: 0;
+      }
+
+      .cta-form button {
+        border-radius: 0 8px 8px 0;
+        margin: 0;
+      }
+    }
+
+
+    /* Responsive */
+    @media (min-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+
+      .card-group {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .card {
+        flex: 1;
       }
     }
   </style>
 </head>
+
 <body>
-  <header class="top-header">
-    <div class="logo">Whatsdrop</div>
+
+  <header>
+    <div class="logo">WhatsDrop</div>
   </header>
 
   <section class="hero">
-    <h1>Estáis listos para la revolución de la compra online?</h1>
-    <p>Olvida las apps, así es como comprarás a partir de ahora!</p>
-    <form class="form-inline">
-        <input type="email" placeholder="Tu correo electrónico" required />
-        <button class="cta" type="submit">Empieza la experiencia</button>
-      </form>
+    <h1>Transforma tu <span>WhatsApp</span> en una máquina de ventas</h1>
+    <p>
+      IA conversacional entrenada con tu estilo personal que actúa como asesor de ventas 24/7,
+      ofreciendo recomendaciones personalizadas y cerrando ventas automáticamente.
+    </p>
+    <section class="cta">
+      <form  class="cta-form form-inline" action="https://formsubmit.co/whatsdrop.ai@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Tu email" required />
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+        <button class="btn-green" type="submit">Únete a la Lista de Espera →</button>
+   </form>
+      <p style="font-size: 0.85rem; color: #6b7280;">Acceso anticipado · Sin compromiso</p>
+    </section>
   </section>
+
+  <section class="features">
+    <h2>Tres funcionalidades que revolucionan tus ventas</h2>
+    <p>Cada funcionalidad está diseñada para maximizar la conversión y ofrecer una experiencia única a tus clientes</p>
+    <div class="card-group">
+      <div class="card" style="background-color: #e6fcef;">
+        <div class="benefit-icon">
+          <svg class="icon" fill="#10b981" viewBox="0 0 24 24">
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6h2a4 4 0 0 1 8 0h2c0-3.31-2.69-6-6-6z" />
+          </svg>
+        </div>
+        <h3>Asesor Personal con tu Estilo</h3>
+        <ul>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Entrenado con tu contenido y estilo</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Explicaciones personalizadas de productos</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Alternativas rápidas y relevantes</li>
+        </ul>
+      </div>
+      <div class="card" style="background-color: #eef7ff;">
+        <div class="benefit-icon">
+          <svg class="icon" fill="#3b82f6" viewBox="0 0 24 24">
+            <path d="M4 6h16v2H4zM4 10h16v2H4zM4 14h10v2H4z" />
+          </svg>
+        </div>
+        <h3>Selección Curada Instantánea</h3>
+        <ul>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Preguntas inteligentes para entender necesidades</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Curaduría exprés de 3–6 productos</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Navegación tipo "elige tu camino"</li>
+        </ul>
+      </div>
+      <div class="card" style="background-color: #f2f0ff;">
+        <div class="benefit-icon">
+          <svg class="icon" fill="#8b5cf6" viewBox="0 0 24 24">
+            <path d="M12 2C9 6 7 10 7 14a5 5 0 0 0 10 0c0-4-2-8-5-12zM9 21h6v1H9z" />
+          </svg>
+        </div>
+        <h3>Maniquí Visual del Outfit</h3>
+        <ul>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Imágenes realistas con DALL·E 3</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Outfits completos visualizados</li>
+          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>Versiones alternativas del look</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <h2>Por qué los creadores eligen WhatsDrop</h2>
+    <p>Resultados comprobados que transforman la manera de vender</p>
+    <div class="card-group">
+      <div class="card benefit-icon">
+        <svg class="icon" fill="#06b6d4" viewBox="0 0 24 24">
+          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <h3>+300% Conversión</h3>
+        <p>Aumenta dramáticamente tu tasa de conversión con recomendaciones personalizadas y atención 24/7</p>
+      </div>
+      <div class="card benefit-icon">
+        <svg class="icon" fill="#6366f1" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4l2 2" />
+        </svg>
+        <h3>Atención Instantánea</h3>
+        <p>Responde a tus clientes al instante, sin importar la hora del día, manteniendo tu estilo personal</p>
+      </div>
+      <div class="card benefit-icon">
+        <svg class="icon" fill="#8b5cf6" viewBox="0 0 24 24">
+          <path d="M4 4h16v16H4z" />
+          <path d="M4 9h16M9 4v16" />
+        </svg>
+        <h3>Escalabilidad Total</h3>
+        <p>Atiende a miles de clientes simultáneamente sin perder la personalización que te caracteriza</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Sé de los primeros en revolucionar tus ventas</h2>
+    <p>Únete a la lista de espera y obtén acceso anticipado a WhatsDrop. Los primeros usuarios tendrán configuración
+      gratuita y soporte prioritario.</p>
+    <a href="#" class="btn">Únete a la Lista de Espera →</a>
+    <p style="font-size: 0.8rem; margin-top: 0.5rem;"> Acceso anticipado · Configuración gratuita </p>
+  </section>
+
 </body>
+
 </html>
