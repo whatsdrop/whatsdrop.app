@@ -44,9 +44,11 @@
     }
 
     header .logo {
-      font-weight: 700;
+      /* font-weight: 700;
       font-size: 1.2rem;
-      color: #111;
+      color: #111; */
+      width: 150px;
+      height: auto;
     }
 
     .btn-green {
@@ -220,12 +222,14 @@
     }
 
     .gradient-text {
-      background: linear-gradient(to right, #10b981, #6366f1); /* Azul a violeta como en tu diseño */
+      background: linear-gradient(to right, #10b981, #6366f1);
+      /* Azul a violeta como en tu diseño */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
       font-weight: 700;
     }
+
 
 
 
@@ -266,11 +270,9 @@
 </head>
 
 <body>
-
   <header>
-    <div class="logo">WhatsDrop</div>
+    <img src="./images/logo.png" alt="Logo WhatsDrop" class="logo" />
   </header>
-
   <section class="hero mt-3 mb-3">
     <h1>Transforma tu <span class="gradient-text">WhatsApp</span> en una máquina de ventas</h1>
 
@@ -398,7 +400,6 @@
     <a href="#" class="btn">Únete a la Lista de Espera →</a>
     <p style="font-size: 0.8rem; margin-top: 0.5rem;"> Acceso anticipado · Configuración gratuita </p>
   </section>
-
 </body>
 
 </html>
