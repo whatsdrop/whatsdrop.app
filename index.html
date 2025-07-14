@@ -5,392 +5,268 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsDrop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    .mt-2 {
-      margin-top: 2rem;
-    }
-
-    .mb-2 {
-      margin-bottom: 2rem;
-    }
-
-    .mt-3 {
-      margin-top: 3rem;
-    }
-
-    .mb-3 {
-      margin-bottom: 3rem;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 1.5rem 2rem;
-      align-items: center;
-    }
-
-    header .logo {
-      /* font-weight: 700;
-      font-size: 1.2rem;
-      color: #111; */
-      width: 150px;
-      height: auto;
-    }
-
-    .btn-green {
-      background-color: #10b981;
-      color: #fff;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 3rem 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .hero h1 span {
-      color: #3b82f6;
-    }
-
-    .hero p {
-      max-width: 750px;
-      margin: 1rem auto;
-      color: #4b5563;
-    }
-
-    .hero .cta {
-      margin-top: 1.5rem;
-    }
-
-    .cta .btn-green {
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .benefits,
-    .features {
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .benefits h2,
-    .features h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .benefits p,
-    .features p {
-      color: #6b7280;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-
-    .card-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: #ffffff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      text-align: left;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .card ul {
-      margin-top: 0.5rem;
-      padding-left: 0;
-      list-style: none;
-      color: #374151;
-    }
-
-    .card li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .check-icon {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      color: #10b981;
-    }
-
-    .icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 1rem;
-    }
-
-    .benefit-icon {
-      text-align: center;
-    }
-
-    .cta-banner {
-      background: linear-gradient(to right, #0ea5e9, #3b82f6);
-      color: white;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .cta-banner h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .cta-banner p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .cta-banner .btn {
-      background-color: white;
-      color: #0ea5e9;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .cta-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .cta-form input[type="email"] {
-      padding: 12px 16px;
-      border: none;
-      border-radius: 8px;
-      max-width: 300px;
-      width: 100%;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .cta-form button {
-      background: #00b894;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .cta-form button:hover {
-      background: #019875;
-    }
-
-    .gradient-text {
-      background: linear-gradient(to right, #10b981, #6366f1);
-      /* Azul a violeta como en tu diseño */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-      font-weight: 700;
-    }
-
-
-
-
-    @media (min-width: 640px) {
-      .cta-form {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .cta-form input[type="email"] {
-        border-radius: 8px 0 0 8px;
-        margin: 0;
-      }
-
-      .cta-form button {
-        border-radius: 0 8px 8px 0;
-        margin: 0;
-      }
-    }
-
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 5rem;
-      }
-
-      .card-group {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .card {
-        flex: 1;
-      }
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <img src="./images/logo.png" alt="Logo WhatsDrop" class="logo" />
+
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <img src="./images/logo.png" alt="Logo WhatsDrop" class="w-[150px] h-auto" />
+        </div>
+        <!-- <button class="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
+          Únete a la Lista de Espera
+        </button> -->
+      </div>
+    </div>
   </header>
-  <section class="hero mt-3 mb-3">
-    <h1>Transforma tu <span class="gradient-text">WhatsApp</span> en una máquina de ventas</h1>
+<!-- Header -->
+<div class="min-h-screen bg-gray-50 flex flex-col justify-center"">
 
-    <p>
-      IA conversacional entrenada con tu estilo personal que actúa como asesor de ventas 24/7,
-      ofreciendo recomendaciones personalizadas y cerrando ventas automáticamente.
-    </p>
 
-  </section>
-
-  <section class="features">
-    <h2>Tres funcionalidades que revolucionan tus ventas</h2>
-    <p>Cada funcionalidad está diseñada para maximizar la conversión y ofrecer una experiencia única a tus clientes</p>
-    <div class="card-group">
-      <div class="card" style="background-color: #e6fcef;">
-        <div class="">
-          <svg class="icon" fill="#10b981" viewBox="0 0 24 24">
-            <path
-              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6h2a4 4 0 0 1 8 0h2c0-3.31-2.69-6-6-6z" />
-          </svg>
-        </div>
-        <h2>Asesor Personal con tu Estilo</h2>
-        <p>Un asistente conversacional que actúa como tu personal shopper virtual, entrenado con tu lenguaje, estilo y
-          criterio de recomendación. Guía a tus clientes con sugerencias empáticas y personalizadas.</p>
-        <ul>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Entrenado con tu contenido y estilo</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Explicaciones personalizadas de productos</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Alternativas rápidas y relevantes</li>
-        </ul>
-      </div>
-      <div class="card" style="background-color: #eef7ff;">
-        <div class="">
-          <svg class="icon" fill="#3b82f6" viewBox="0 0 24 24">
-            <path d="M4 6h16v2H4zM4 10h16v2H4zM4 14h10v2H4z" />
-          </svg>
-        </div>
-        <h2>Selección Curada Instantánea</h2>
-        <p>Experiencia conversacional guiada que actúa como filtro inteligente, presentando una selección reducida y
-          altamente relevante basada en 2-3 preguntas clave sobre necesidades del cliente.</p>
-        <ul>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Preguntas inteligentes para entender necesidades</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Curaduría exprés de 3–6 productos</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Navegación tipo "elige tu camino"</li>
-        </ul>
-      </div>
-      <div class="card" style="background-color: #f2f0ff;">
-        <div class="">
-          <svg class="icon" fill="#8b5cf6" viewBox="0 0 24 24">
-            <path d="M12 2C9 6 7 10 7 14a5 5 0 0 0 10 0c0-4-2-8-5-12zM9 21h6v1H9z" />
-          </svg>
-        </div>
-        <h2>Maniquí Visual del Outfit</h2>
-        <p>Representación visual clara v atractiva de outfit sugerido usando DALL-E 3, mostrando cómo se vería el
-          conjunto completo en una persona real</p>
-        <ul>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Imágenes realistas con DALL·E 3</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Outfits completos visualizados</li>
-          <li><svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 13l4 4L19 7" />
-            </svg>Versiones alternativas del look</li>
-        </ul>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          Transforma tu 
+          <span class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent inline-block">
+            WhatsApp
+          </span>
+          en una máquina de ventas  
+          <span>para <span id="changing-word" class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent inline-block"></span></span>
+         
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          IA conversacional entrenada con tu estilo personal que actúa como asesor de ventas 24/7, 
+          ofreciendo recomendaciones personalizadas y cerrando ventas automáticamente.
+        </p>
+        <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
+            Únete a la Lista de Espera
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+          </button>
+          <p class="text-sm text-gray-500">
+            Acceso anticipado • Sin compromiso
+          </p>
+        </div> -->
       </div>
     </div>
   </section>
+</div>
 
-  <section class="benefits">
-    <h2>Por qué los creadores eligen WhatsDrop</h2>
-    <p>Resultados comprobados que transforman la manera de vender</p>
-    <div class="card-group">
-      <div class="card benefit-icon">
-        <svg class="icon" fill="#06b6d4" viewBox="0 0 24 24">
-          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-        <h2>+300% Conversión</h2>
-        <p>Aumenta dramáticamente tu tasa de conversión con recomendaciones personalizadas y atención 24/7</p>
+  
+
+<section class="features" style="background: white; padding: 5rem 1.5rem;">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 1rem;">
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">
+        Tres funcionalidades que revolucionan tus ventas
+      </h2>
+      <p style="font-size: 1.25rem; color: #4b5563; max-width: 600px; margin: 0 auto;">
+        Cada funcionalidad está diseñada para maximizar la conversión y ofrecer una experiencia única a tus clientes
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <!-- Feature 1 -->
+      <div style="background: linear-gradient(to bottom right, #d1fae5, #a7f3d0); padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 15px rgba(16, 185, 129, 0.2); border: 1px solid #a7f3d0; transition: box-shadow 0.3s ease;">
+        <div style="background-color: #059669; width: 64px; height: 64px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <!-- Replace with your SVG icon -->
+          <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6h2a4 4 0 0 1 8 0h2c0-3.31-2.69-6-6-6z"/></svg>
+        </div>
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Asesor Personal con tu Estilo</h3>
+        <p style="color: #4b5563; margin-bottom: 1.5rem; line-height: 1.5;">
+          Un asistente conversacional que actúa como tu personal shopper virtual, entrenado con tu lenguaje, estilo y criterio de recomendación. Guía a tus clientes con sugerencias empáticas y personalizadas.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; color: #374151; font-size: 0.875rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Entrenado con tu contenido y estilo
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Explicaciones personalizadas de productos
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Alternativas rápidas y relevantes
+          </div>
+        </div>
       </div>
-      <div class="card benefit-icon">
-        <svg class="icon" fill="#6366f1" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 8v4l2 2" />
-        </svg>
-        <h2>Atención Instantánea</h2>
-        <p>Responde a tus clientes al instante, sin importar la hora del día, manteniendo tu estilo personal</p>
+
+      <!-- Feature 2 -->
+      <div style="background: linear-gradient(to bottom right, #dbeafe, #bfdbfe); padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 15px rgba(59, 130, 246, 0.2); border: 1px solid #bfdbfe; transition: box-shadow 0.3s ease;">
+        <div style="background-color: #2563eb; width: 64px; height: 64px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <!-- Replace with your SVG icon -->
+          <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24"><path d="M4 6h16v2H4zM4 10h16v2H4zM4 14h10v2H4z"/></svg>
+        </div>
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Selección Curada Instantánea</h3>
+        <p style="color: #4b5563; margin-bottom: 1.5rem; line-height: 1.5;">
+          Experiencia conversacional guiada que actúa como filtro inteligente, presentando una selección reducida y altamente relevante basada en 2-3 preguntas clave sobre necesidades del cliente.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; color: #374151; font-size: 0.875rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Preguntas inteligentes para entender necesidades
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Curaduría exprés de 3-5 productos
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Navegación tipo "elige tu camino"
+          </div>
+        </div>
       </div>
-      <div class="card benefit-icon">
-        <svg class="icon" fill="#8b5cf6" viewBox="0 0 24 24">
-          <path d="M4 4h16v16H4z" />
-          <path d="M4 9h16M9 4v16" />
-        </svg>
-        <h2>Escalabilidad Total</h2>
-        <p>Atiende a miles de clientes simultáneamente sin perder la personalización que te caracteriza</p>
+
+      <!-- Feature 3 -->
+      <div style="background: linear-gradient(to bottom right, #e0e7ff, #c7d2fe); padding: 2rem; border-radius: 1.5rem; box-shadow: 0 10px 15px rgba(139, 92, 246, 0.2); border: 1px solid #c7d2fe; transition: box-shadow 0.3s ease;">
+        <div style="background-color: #4f46e5; width: 64px; height: 64px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <!-- Replace with your SVG icon -->
+          <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 24 24"><path d="M12 2C9 6 7 10 7 14a5 5 0 0 0 10 0c0-4-2-8-5-12zM9 21h6v1H9z"/></svg>
+        </div>
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem;">Maniquí Visual del Outfit</h3>
+        <p style="color: #4b5563; margin-bottom: 1.5rem; line-height: 1.5;">
+          Representación visual clara y atractiva del outfit sugerido, mostrando cómo se vería el conjunto completo en una persona real.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; color: #374151; font-size: 0.875rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Imágenes realistas
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Outfits completos visualizados
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M5 13l4 4L19 7"/></svg>
+            Versiones alternativas del look
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Por qué los creadores eligen WhatsDrop
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Resultados comprobados que transforman la manera de vender
+        </p>
+      </div>
+  
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Primer bloque -->
+        <div class="text-center">
+          <div class="bg-gradient-to-r from-emerald-600 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <!-- TrendingUp Icon (Lucide) -->
+            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 17l6-6 4 4 8-8"></path>
+              <path d="M14 7h7v7"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            +300% Conversión
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Aumenta drásticamente tu tasa de conversión con recomendaciones personalizadas y atención 24/7
+          </p>
+        </div>
+  
+        <!-- Segundo bloque -->
+        <div class="text-center">
+          <div class="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <!-- Zap Icon (Lucide) -->
+            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            Atención Instantánea
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Responde a tus clientes al instante, sin importar la hora del día, manteniendo tu estilo personal
+          </p>
+        </div>
+  
+        <!-- Tercer bloque -->
+        <div class="text-center">
+          <div class="bg-gradient-to-r from-indigo-600 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <!-- Users Icon (Lucide) -->
+            <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 010 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">
+            Escalabilidad Total
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Atiende a miles de clientes simultáneamente sin perder la personalización que te caracteriza
+          </p>
+        </div>
       </div>
     </div>
   </section>
+  
 
-  <section class="cta-banner">
-    <h2>Sé de los primeros en revolucionar tus ventas</h2>
-    <p>Únete a la lista de espera y obtén acceso anticipado a WhatsDrop. Los primeros usuarios tendrán configuración
-      gratuita y soporte prioritario.</p>
-    <a href="#" class="btn">Únete a la Lista de Espera →</a>
-    <p style="font-size: 0.8rem; margin-top: 0.5rem;"> Acceso anticipado · Configuración gratuita </p>
-  </section>
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 md:mb-0">
+          <!-- MessageCircle icon -->
+          <img src="./images/logo.png" alt="Logo WhatsDrop" class="w-[150px] h-auto" />
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-gray-400 mb-2">
+            ¿Listo para transformar tu WhatsApp?
+          </p>
+          <!-- <button class="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
+            Únete a la Lista de Espera
+          </button> -->
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 WhatsDrop. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script>
+    const words = [
+      "Influencers",
+      "Marcas de moda",
+      "Estilistas",
+      "Personal shoppers",
+      "Showrooms"
+    ];
+    let index = 0;
+    const changingWordSpan = document.getElementById("changing-word");
+
+    function changeWord() {
+      changingWordSpan.textContent = words[index];
+      index = (index + 1) % words.length;
+    }
+
+    changeWord(); // initial call
+    setInterval(changeWord, 2500); // change every 2.5 seconds
+  </script>
+
 </body>
 
 </html>
