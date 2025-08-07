@@ -9,6 +9,57 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .cta-form input[type="email"] {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      max-width: 300px;
+      width: 100%;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .cta-form button {
+      background: #00b894;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta-form button:hover {
+      background: #019875;
+    }
+
+    @media (min-width: 640px) {
+      .cta-form {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .cta-form input[type="email"] {
+        border-radius: 8px 0 0 8px;
+        margin: 0;
+      }
+
+      .cta-form button {
+        border-radius: 0 8px 8px 0;
+        margin: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -28,20 +79,29 @@
       </div>
     </div>
   </header>
-  <div class="min-h-screen bg-gray-50 flex flex-col justify-center">
+  <div class="min-h-screen bg-gray-50 flex flex-col justify-center text-center">
     <section class=" relative overflow-hidden py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-          Tu mejor vendedor no es humano.
-           <span class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent inline-block">
-            Es una IA entrenada para hablar y vender como tú.
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text max-w-4xl mx-auto">
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Tu mejor vendedor no es humano.
+            <span class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent inline-block">
+              Es una IA entrenada para hablar y vender como tú.
             </span>
-        </h1>
-        <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-          Activamos un asesor inteligente que aprende con tu tono, tu catálogo y tu forma de vender para atender a tus clientes en WhatsApp 24/7. Sin apps y sin esfuerzo.
-        </p>
-        <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Activamos un asesor inteligente que aprende con tu tono, tu catálogo y tu forma de vender para atender a tus
+            clientes en WhatsApp 24/7. Sin apps y sin esfuerzo.
+          </p>
+          <section class="cta">
+            <form class="cta-form form-inline" action="https://formsubmit.co/info@whatsdrop.ai" method="POST">
+              <input type="email" name="email" placeholder="Tu email" required />
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none">
+              <input type="hidden" name="_next" value="https://www.whatsdrop.ai/">
+              <button class="btn-green" type="submit">Únete a la Lista de Espera →</button>
+            </form>
+            <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
                 Únete a la Lista de Espera
                 <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,8 +112,9 @@
                 Acceso anticipado • Sin compromiso
               </p>
             </div> -->
+          </section>
+        </div>
       </div>
-    </div>
     </section>
   </div>
 
@@ -258,7 +319,8 @@
             </svg>
           </button>
           <div id="faq1-content" class="px-6 pb-4 hidden" aria-labelledby="faq1-btn">
-            <p>No. Usamos la información que ya existe en Google sobre tus productos. Solo dinos qué tiendas quieres incluir, y nosotros filtramos por ti. ¡Sin complicaciones técnicas!</p>
+            <p>No. Usamos la información que ya existe en Google sobre tus productos. Solo dinos qué tiendas quieres
+              incluir, y nosotros filtramos por ti. ¡Sin complicaciones técnicas!</p>
           </div>
         </div>
 
@@ -272,7 +334,9 @@
             </svg>
           </button>
           <div id="faq2-content" class="px-6 pb-4 hidden" aria-labelledby="faq2-btn">
-            <p>Muy fácil. Te haremos unas preguntas clave sobre cómo vendes, qué priorizas y cómo hablas con tus clientes. A partir de ahí, lo afinamos juntos. También puedes añadir textos tuyos más adelante para que aprenda aún más de ti.</p>
+            <p>Muy fácil. Te haremos unas preguntas clave sobre cómo vendes, qué priorizas y cómo hablas con tus
+              clientes. A partir de ahí, lo afinamos juntos. También puedes añadir textos tuyos más adelante para que
+              aprenda aún más de ti.</p>
           </div>
         </div>
 
@@ -286,7 +350,9 @@
             </svg>
           </button>
           <div id="faq3-content" class="px-6 pb-4 hidden" aria-labelledby="faq3-btn">
-            <p>Eso corre por nuestra cuenta. Solo necesitamos tu número de teléfono. Te devolvemos un enlace personalizado listo para poner en tu bio de Instagram, web o donde quieras. ¡Y a vender 24/7 en tu canal personalizado!!</p>
+            <p>Eso corre por nuestra cuenta. Solo necesitamos tu número de teléfono. Te devolvemos un enlace
+              personalizado listo para poner en tu bio de Instagram, web o donde quieras. ¡Y a vender 24/7 en tu canal
+              personalizado!!</p>
           </div>
         </div>
       </div>
@@ -303,7 +369,7 @@
           <p class="text-gray-400 mb-2">
             ¿Listo para transformar tu WhatsApp?
           </p>
-          
+
           <!-- <button class="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
             Únete a la Lista de Espera
           </button> -->
