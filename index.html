@@ -9,7 +9,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .cta-form {
       display: flex;
       flex-direction: column;
@@ -68,19 +73,21 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <img src="./images/logo.png" alt="Logo WhatsDrop" class="w-[150px] h-auto" />
+          <a href="#">
+            <img src="./images/logo.png" alt="Logo WhatsDrop" class="w-[150px] h-auto" />
+          </a>
         </div>
         <nav class="space-x-6 hidden md:flex">
           <a href="#features" class="text-gray-700 hover:text-emerald-600 font-medium">Funcionalidades</a>
           <a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium">Por qué elegirnos</a>
           <a href="#faqs" class="text-gray-700 hover:text-emerald-600 font-medium">FAQs</a>
-          <a href="#footer" class="text-gray-700 hover:text-emerald-600 font-medium">Contacto</a>
+          <a href="#" class="text-gray-700 hover:text-emerald-600 font-medium">Contacto</a>
         </nav>
       </div>
     </div>
   </header>
   <div class="min-h-screen bg-gray-50 flex flex-col justify-center text-center">
-    <section class=" relative overflow-hidden py-20">
+    <section id="hero" class=" relative overflow-hidden py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text max-w-4xl mx-auto">
           <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -384,7 +391,7 @@
   </footer>
 
 
- <script>
+  <script>
     const faqButtons = document.querySelectorAll('#faqs button');
 
     faqButtons.forEach(button => {
