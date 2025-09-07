@@ -77,6 +77,13 @@
             <img src="./images/logo.png" alt="Logo WhatsDrop" class="w-[150px] h-auto" />
           </a>
         </div>
+              <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
         <nav class="space-x-6 hidden md:flex">
           <a href="#features" class="text-gray-700 hover:text-emerald-600 font-medium">Funcionalidades</a>
           <a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium">Por qué elegirnos</a>
@@ -85,6 +92,15 @@
         </nav>
       </div>
     </div>
+      <div id="mobile-menu"
+    class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
+    <nav class="flex flex-col px-6 py-4 space-y-4">
+      <a href="#features" class="text-gray-700 hover:text-emerald-600 font-medium">Funcionalidades</a>
+      <a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium">Por qué elegirnos</a>
+      <a href="#faqs" class="text-gray-700 hover:text-emerald-600 font-medium">FAQs</a>
+      <a href="#footer" class="text-gray-700 hover:text-emerald-600 font-medium">Contacto</a>
+    </nav>
+  </div>
   </header>
   <div class="min-h-screen bg-gray-50 flex flex-col justify-center text-center">
     <section id="hero" class=" relative overflow-hidden py-20">
@@ -392,6 +408,21 @@
 
 
   <script>
+      const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+
+  // Abrir/cerrar menú
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Cerrar menú al hacer click en un link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
     const faqButtons = document.querySelectorAll('#faqs button');
 
     faqButtons.forEach(button => {
