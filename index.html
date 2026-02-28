@@ -139,8 +139,9 @@
             Sin apps. Sin complicaciones.
           </p>
           <section class="cta">
-            <a href="https://wa.me/34644159901" class="inline-block"
-              onclick="event.preventDefault(); if(typeof fbq !== 'undefined'){fbq('track','Lead');} setTimeout(() => { window.location.href = this.href; }, 300);">
+            <a href="https://wa.me/34644159901" class="inline-block" id="cta-whatsapp"
+              onclick="event.preventDefault(); if(typeof fbq !== 'undefined'){fbq('track','Lead');} setTimeout(() => {
+              window.location.href = this.href; }, 300);">
               <button
                 class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
                 Pruébala GRATIS ahora
@@ -360,6 +361,22 @@
       });
     });
   </script>
+
+  <script>
+    const ctaBtn = document.getElementById('cta-whatsapp');
+
+    ctaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const consent = localStorage.getItem("cookieConsent");
+      if (consent === "accepted" && typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+      }
+      setTimeout(() => {
+        window.location.href = ctaBtn.href;
+      }, 300);
+    });
+  </script>
+
   <script>
     function loadMetaPixel() {
       !function (f, b, e, v, n, t, s) {
