@@ -8,7 +8,11 @@
   <title>ZIA</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./images/logo6.png" />
+  <link rel="icon" type="image/png" href="./images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+  <link rel="shortcut icon" href="./images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png" />
+  <link rel="manifest" href="./images/site.webmanifest" />
   <style>
     html {
       font-family: 'Inter', sans-serif;
@@ -100,27 +104,8 @@
             </svg>
           </a>
         </div>
-        <!-- <button id="menu-btn" class="md:hidden focus:outline-none">
-          <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <nav class="space-x-6 hidden md:flex">
-          <a href="#features" class="text-gray-700 hover:text-emerald-600 font-medium">Funcionalidades</a>
-          <a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium">Por qué elegirnos</a>
-          <a href="#faqs" class="text-gray-700 hover:text-emerald-600 font-medium">FAQs</a>
-          <a href="#" class="text-gray-700 hover:text-emerald-600 font-medium">Contacto</a>
-        </nav> -->
       </div>
     </div>
-    <!-- <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg">
-      <nav class="flex flex-col px-6 py-4 space-y-4">
-        <a href="#features" class="text-gray-700 hover:text-emerald-600 font-medium">Funcionalidades</a>
-        <a href="#why" class="text-gray-700 hover:text-emerald-600 font-medium">Por qué elegirnos</a>
-        <a href="#faqs" class="text-gray-700 hover:text-emerald-600 font-medium">FAQs</a>
-        <a href="#footer" class="text-gray-700 hover:text-emerald-600 font-medium">Contacto</a>
-      </nav>
-    </div> -->
   </header>
   <div class="min-h-screen bg-gray-50 flex flex-col justify-center text-center">
     <section id="hero" class=" relative overflow-hidden py-20">
@@ -139,7 +124,8 @@
             Sin apps. Sin complicaciones.
           </p>
           <section class="cta">
-            <a href="https://wa.me/34644159901" class="inline-block" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/34644159901" class="inline-block" id="cta-whatsapp" target="_blank"
+              rel="noopener noreferrer">
               <button
                 class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
                 Pruébala GRATIS ahora
@@ -342,8 +328,6 @@
   <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-
 
     if (menuBtn && mobileMenu) {
       const mobileLinks = mobileMenu.querySelectorAll('a');
