@@ -11,6 +11,7 @@
   <link rel="icon" type="image/png" href="./images/logo6.png" />
   <style>
     html {
+      font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
     }
 
@@ -138,7 +139,7 @@
             Sin apps. Sin complicaciones.
           </p>
           <section class="cta">
-            <a href="https://wa.me/34644159901" class="inline-block" id="cta-whatsapp">
+            <a href="https://wa.me/34644159901" class="inline-block" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">
               <button
                 class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
                 Pruébala GRATIS ahora
@@ -343,39 +344,20 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = mobileMenu.querySelectorAll('a');
 
-    // Abrir/cerrar menú
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
 
-    // Cerrar menú al hacer click en un link
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    if (menuBtn && mobileMenu) {
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-    });
-    const faqButtons = document.querySelectorAll('#faqs button');
 
-    faqButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        const content = document.getElementById(button.getAttribute('aria-controls'));
-
-        // Cerrar todos
-        faqButtons.forEach(btn => {
-          btn.setAttribute('aria-expanded', 'false');
-          document.getElementById(btn.getAttribute('aria-controls')).classList.add('hidden');
-          btn.querySelector('svg').classList.remove('rotate-180');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
         });
-
-        // Abrir el clickeado solo si estaba cerrado
-        if (!isExpanded) {
-          button.setAttribute('aria-expanded', 'true');
-          content.classList.remove('hidden');
-          button.querySelector('svg').classList.add('rotate-180');
-        }
       });
-    });
+    }
   </script>
 
   <script>
@@ -429,7 +411,7 @@
       } else if (consent === "accepted") {
         loadMetaPixel();
       }
-    };
+    }
   </script>
 
   <script>
