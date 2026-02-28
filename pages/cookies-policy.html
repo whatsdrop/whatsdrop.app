@@ -143,11 +143,15 @@
       <img src="../images/logo5.png" alt="Logo ZIA"
         class="w-[150px] h-auto mx-auto mb-4" />
       <p class="text-gray-400">
-        &copy; 2025 WHATSDROP, SL. Todos los derechos reservados.
+        &copy; <span id="year"></span> WHATSDROP, SL. Todos los derechos reservados.
       </p>
     </div>
   </footer>
 
 </body>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+</script>
 
 </html>
