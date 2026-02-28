@@ -140,7 +140,7 @@
           </p>
           <section class="cta">
             <a href="https://wa.me/34644159901" class="inline-block"
-              onclick="event.preventDefault(); fbq('track', 'Lead'); setTimeout(() => { window.location.href = this.href; }, 300);">
+              onclick="event.preventDefault(); if(typeof fbq !== 'undefined'){fbq('track','Lead');} setTimeout(() => { window.location.href = this.href; }, 300);">
               <button
                 class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg flex items-center">
                 Pruébala GRATIS ahora
@@ -149,7 +149,6 @@
                   <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                 </svg>
               </button>
-              <!-- <div>Empieza tu primera conversación con ZIA</div> -->
             </a>
           </section>
         </div>
@@ -281,7 +280,7 @@
         <div class="flex items-center space-x-2 mb-4 md:mb-0">
           <img src="./images/logo5.png" alt="Logo ZIA" class="w-[150px] h-auto" />
         </div>
-        <div class="flex justify-center md:justify-end space-x-4 mt-4 mb-4">
+        <div class="flex justify-center md:justify-end mt-4 mb-4 gap-2">
           <a href="https://www.instagram.com/zia.eu?igsh=bWRkajJyYWdmZ251" target="_blank" rel="noopener noreferrer"
             aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current">
@@ -315,7 +314,8 @@
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
         <p>&copy; 2025 ZIA. Todos los derechos reservados.</p>
         <a href="./pages/privacity.html" class="text-blue-600 hover:underline mx-2">Política de Privacidad</a> |
-        <a href="./pages/privacity.html" class="text-blue-600 hover:underline mx-2">Términos y Condiciones</a>
+        <a href="./pages/privacity.html" class="text-blue-600 hover:underline mx-2">Términos y Condiciones</a> |
+        <a href="./pages/politica-cookies.html" class="text-blue-600 hover:underline mx-2">Política de Cookies</a>
       </div>
     </div>
   </footer>
@@ -360,29 +360,71 @@
       });
     });
   </script>
-  <!-- Meta Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+    function loadMetaPixel() {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1247089210729715');
-    fbq('track', 'PageView');
+      fbq('init', '1247089210729715');
+      fbq('track', 'PageView');
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("cookieConsent", "accepted");
+      document.getElementById("cookie-banner").style.display = "none";
+      loadMetaPixel();
+    }
+
+    function rejectCookies() {
+      localStorage.setItem("cookieConsent", "rejected");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function () {
+      const consent = localStorage.getItem("cookieConsent");
+      if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      } else if (consent === "accepted") {
+        loadMetaPixel();
+      }
+    };
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1247089210729715&ev=PageView&noscript=1" />
-  </noscript>
-  <!-- End Meta Pixel Code -->
 
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-black text-white px-6 py-6 z-50 hidden shadow-2xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <p class="text-sm text-gray-300">
+        Utilizamos cookies para análisis y marketing.
+        Puedes <a href="./pages/cookies-policy.html" class="underline text-emerald-500 hover:text-emerald-400">consultar
+          nuestra Política de Cookies</a> o
+        aceptarlas/rechazarlas.
+      </p>
+      </p>
+
+      <div class="flex gap-3">
+        <button onclick="acceptCookies()"
+          class="bg-emerald-600 hover:bg-emerald-700 transition px-5 py-2 rounded-lg font-medium">
+          Aceptar
+        </button>
+
+        <button onclick="rejectCookies()"
+          class="border border-gray-500 hover:border-gray-300 transition px-5 py-2 rounded-lg font-medium text-gray-300 hover:text-white">
+          Rechazar
+        </button>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 
